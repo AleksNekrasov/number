@@ -15,10 +15,14 @@ int main()
     if (number[0] == '-' || number[0] == '.' || number[0] > '0' && number[0] < '9')
     {
         bool flag = true; // флажок
-
+        int s = 0;        // счетчик
         for (int first = 1; first < number.length(); first++)
         {
-            int s = 0;        // счетчик
+                    
+            if (number[0] == '.')
+            {
+                s = 1;
+            }
 
             if (number[first] < '0' && number[first] != '.' || number[first] > '9')
             {
@@ -36,6 +40,7 @@ int main()
                 flag = false;
                 break;
             }
+            std::cout << s << '\n';
         }
 
         if (flag)
