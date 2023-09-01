@@ -12,13 +12,13 @@ int main()
     std::cout << "enter a number: ";
     std::cin >> number;
 
-    if (number[0] == '-' || number[0] == '.' || number[0] > '0' && number[0] < '9')
+    if (number[0] == '-' || number[0] == '.' || number[0] >= '0' && number[0] <= '9')
     {
         bool flag = true; // флажок
-        int s = 0;        // счетчик
+        int s = 0;        // счетчик точек
         for (int first = 1; first < number.length(); first++)
         {
-                    
+
             if (number[0] == '.')
             {
                 s = 1;
@@ -39,6 +39,14 @@ int main()
             {
                 flag = false;
                 break;
+            }
+            if (number.length() == 2)
+            {
+                if ((number[0] < '0' || number[0 > 9]) && (number[1] < '0' || number[1] > '9'))
+                {
+                    flag = false;
+                    break;
+                }
             }
             std::cout << s << '\n';
         }
